@@ -1,18 +1,36 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({theme,styles,activeTab ,setActiveTab}) => {
+
+  const navItems = [
+    { id: "home", lable: "Home" },
+    { id: "shop", lable: "Shop" },
+    { id: "Collections", lable: "Collections" },
+    { id: "About", lable: "About Us" },
+    { id: "Contact", lable: "Contact" },
+  ];
+
+  const them = styles[theme];
+
+
+
+  console.log(them)
+
+
   return (
     <header>
-    <nav className="navbar">
+    <nav style={them} className="navbar">
       <div className="logo">
-        <a href="#">Jewelry Store</a>
+        <a style={{color:them.color}} href="#">Jewelry Store</a>
       </div>
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
+        {
+          navItems.map((item)=>(
+            <li key={item.id} style={{color: activeTab=== item.id ? "red" : them.color , cursor: "pointer"} } onClick={()=>setActiveTab(item.id)} >{item.lable}</li>
+          ))
+        }
+        
+        
       </ul>
       <div className="cart">
         <a href="#">Cart (0)</a>

@@ -53,13 +53,13 @@ const Shop = () => {
             <a href="#" class="cta-btn">View Details</a>
           </div>
           <div class="product-item">
-            <img src="https://via.placeholder.com/250" alt="Silver Bracelet" />
+            <img src="https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95/U/T/UT01639-PR0000_11_listfront.jpg" alt="Silver Bracelet" />
             <h3>Silver Bracelet</h3>
             <p>$150</p>
             <a href="#" class="cta-btn">View Details</a>
           </div>
           <div class="product-item">
-            <img src="https://via.placeholder.com/250" alt="Platinum Earrings" />
+            <img src="https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95/J/E/JE00952-PTP900_11_listfront.jpg" alt="Platinum Earrings" />
             <h3>Platinum Earrings</h3>
             <p>$800</p>
             <a href="#" class="cta-btn">View Details</a>

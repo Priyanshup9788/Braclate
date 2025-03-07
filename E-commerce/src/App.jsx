@@ -5,6 +5,7 @@ import Footer from './assets/Components/Footer'
 import Header from './assets/Components/Header'
 import Home from './assets/Components/Home'
 import Shop from './assets/Components/Shop'
+import About from './assets/Components/About'
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
       <Header theme={theme} styles={styles} activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab==="home" && <Home theme={theme} styles={styles} />}
       {activeTab==="shop" && <Shop />}
+      {activeTab==="About" && <About />}
+
       
       <Footer />
     </>

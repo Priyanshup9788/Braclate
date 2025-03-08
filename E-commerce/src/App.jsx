@@ -6,6 +6,7 @@ import Header from './assets/Components/Header'
 import Home from './assets/Components/Home'
 import Shop from './assets/Components/Shop'
 import About from './assets/Components/About'
+import User from './assets/Components/User'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
       {activeTab==="home" && <Home theme={theme} styles={styles} />}
       {activeTab==="shop" && <Shop />}
       {activeTab==="About" && <About />}
-
+      {activeTab==="user" && <User />}
       
       <Footer />
     </>

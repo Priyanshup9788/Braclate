@@ -7,7 +7,7 @@ const Header = ({theme,styles,activeTab ,setActiveTab}) => {
     { id: "shop", lable: "Shop" },
     { id: "Collections", lable: "Collections" },
     { id: "About", lable: "About Us" },
-    { id: "Contact", lable: "Contact" },
+    { id: "user", lable: "User" },
   ];
 
   const them = styles[theme];

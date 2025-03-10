@@ -1,26 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const User = () => {
+const User = ({ theme, styles }) => {
+
+    const them = styles[theme];
 
     const [isEdit, setIsEdit] = useState(false);
-    const [userData,setUserData]=useState(
-        {
-            uname:"Priyanshu",
-            email:"priyanshupatel@gmail.com"
-        }
-    )
-    const [formdata, setFormdata] = useState(userData)
+    const [userData, setUserData] = useState(() => {
 
-    const handleChange = (e)=>{
-        setFormdata((prevData)=>{
-            return prevData={...prevData,[e.target.name] : e.target.value}
+        const userData = JSON.parse(localStorage.getItem("user"));
+
+        return userData ? userData :
+            {
+                uname: "Priyanshu",
+                email: "priyanshupatel@gmail.com"
+            }
+    }
+    )
+    const [formdata, setFormdata] = useState({...userData})
+
+    useEffect(()=>{
+        localStorage.setItem("user",JSON.stringify(userData))
+    },[userData])
+
+    const handleChange = (e) => {
+        setFormdata((prevData) => {
+            return prevData = { ...prevData, [e.target.name]: e.target.value }
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!formdata.uname || !formdata.email)
-        {
+        if (!formdata.uname || !formdata.email) {
             alert("fill the filled");
             return;
         }
@@ -32,13 +42,13 @@ const User = () => {
 
     return (
         <section style={{ height: "100vh" }} class="account-container">
-            <aside class="sidebar">
-                <ul>
-                    <li><a href="#profile">Profile</a></li>
-                    <li><a href="#orders">Orders</a></li>
-                    <li><a href="#wishlist">Wishlist</a></li>
-                    <li><a href="#settings">Settings</a></li>
-                    <li><a href="#logout">Logout</a></li>
+            <aside style={them} class="sidebar">
+                <ul >
+                    <li><a style={them} href="#profile">Profile</a></li>
+                    <li><a style={them} href="#orders">Orders</a></li>
+                    <li><a style={them} href="#wishlist">Wishlist</a></li>
+                    <li><a style={them} href="#settings">Settings</a></li>
+                    <li><a style={them} href="#logout">Logout</a></li>
                 </ul>
             </aside>
 
@@ -48,10 +58,10 @@ const User = () => {
                         <h2>Edit Profile</h2>
                         <form onSubmit={handleSubmit}>
                             <label for="uname">Full Name</label>
-                            <input type="text" value={formdata.uname} onChange={(e)=>handleChange(e)} name='uname' id="name" placeholder="Enter your full name" />
+                            <input type="text" value={formdata.uname} onChange={(e) => handleChange(e)} name='uname' id="name" placeholder="Enter your full name" />
 
                             <label for="email">Email</label>
-                            <input type="email" value={formdata.email} onChange={(e)=>handleChange(e)}  name='email' id="email" placeholder="Enter your email" />
+                            <input type="email" value={formdata.email} onChange={(e) => handleChange(e)} name='email' id="email" placeholder="Enter your email" />
 
                             <button type="submit">Save Changes</button>
                         </form>

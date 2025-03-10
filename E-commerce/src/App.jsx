@@ -40,7 +40,7 @@ function App() {
     bottom: "2%",
     right: "2%",
     borderRadius:"45%"
-}} onClick={toggleTheme}>{theme==="dark"?"🌙":"🌞"}</button>
+}} onClick={toggleTheme}>{theme==="dark"?"🌞":"🌙"}</button>
       <Footer />
     </>
   )

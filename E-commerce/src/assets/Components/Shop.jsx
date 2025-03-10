@@ -1,11 +1,14 @@
 import React from 'react'
 
-const Shop = () => {
+const Shop = ({theme,styles}) => {
+
+  const them = styles[theme];
+
   return (
-    <section class="shop">
+    <section style={them}  class="shop">
     <div class="shop-container">
        {/* Sidebar Filter */}
-      <aside class="sidebar">
+      <aside style={them} class="sidebar">
         <h3>Filter By</h3>
         <div class="filter-category">
           <h4>Category</h4>

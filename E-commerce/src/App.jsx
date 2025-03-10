@@ -24,14 +24,23 @@ function App() {
   const [theme,setTheme]=useState("light");
   const [activeTab, setActiveTab] = useState("home");
 
+  const toggleTheme=()=>{
+    theme==="dark"?setTheme("light"):setTheme("dark")
+  }
+
   return (
     <>
       <Header theme={theme} styles={styles} activeTab={activeTab} setActiveTab={setActiveTab} />
       {activeTab==="home" && <Home theme={theme} styles={styles} />}
-      {activeTab==="shop" && <Shop />}
-      {activeTab==="About" && <About />}
-      {activeTab==="user" && <User />}
-      
+      {activeTab==="shop" && <Shop  theme={theme} styles={styles} />}
+      {activeTab==="About" && <About  theme={theme} styles={styles} />}
+      {activeTab==="user" && <User  theme={theme} styles={styles} />}
+      <button style={{    fontSize:"20px",
+    position: "fixed",
+    bottom: "2%",
+    right: "2%",
+    borderRadius:"45%"
+}} onClick={toggleTheme}>{theme==="dark"?"🌙":"🌞"}</button>
       <Footer />
     </>
   )

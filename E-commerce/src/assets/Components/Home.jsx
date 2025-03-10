@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Home = () => {
+const Home = ({theme,styles}) => {
+
+    const them = styles[theme];
+
     return (
-        <div>
+        <div  style={{backgroundColor:them.backgroundColor}}>
             {/* Hero Section  */}
             <section class="hero">
                 <div class="hero-content">
@@ -13,7 +16,7 @@ const Home = () => {
             </section>
 
             {/* Featured Collections Section */}
-            <section class="collections">
+            <section style={them}  class="collections">
                 <h2>Featured Collections</h2>
                 <div class="collection-grid">
                     <div class="collection-item">
@@ -35,7 +38,7 @@ const Home = () => {
             </section>
 
             {/* Trending Products Section */}
-            <section class="trending-products">
+            <section  style={them}  class="trending-products">
                 <h2>Trending Products</h2>
                 <div class="product-grid">
                     <div class="product-item">

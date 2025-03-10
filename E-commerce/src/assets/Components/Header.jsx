@@ -14,9 +14,6 @@ const Header = ({theme,styles,activeTab ,setActiveTab}) => {
 
 
 
-  console.log(them)
-
-
   return (
     <header>
     <nav style={them} className="navbar">
@@ -33,7 +30,7 @@ const Header = ({theme,styles,activeTab ,setActiveTab}) => {
         
       </ul>
       <div className="cart">
-        <a href="#">Cart (0)</a>
+        <a style={{color:them.color}} href="#">Cart (0)</a>
       </div>
     </nav>
   </header>

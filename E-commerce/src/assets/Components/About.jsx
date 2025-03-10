@@ -1,9 +1,12 @@
 import React from 'react'
 
-const About = () => {
+const About = ({theme,styles}) => {
+
+    const them = styles[theme];
+
   return (
     <>
-        <section class="about">
+        <section style={them} class="about">
         <div class="content">
             <h2>Our Story</h2>
             <p>At [Your Brand], we craft timeless pieces that blend elegance with artistry. Each design is meticulously handcrafted with precision and passion.</p>
@@ -11,7 +14,7 @@ const About = () => {
         <img src="https://cdn.leonardo.ai/users/68554cba-c9ca-4875-831a-3ab508f5f2f3/generations/990ade04-8a6e-4391-b987-8e8acf6cbbaa/segments/2:4:1/Flux_Dev_A_dimly_lit_rusticthemed_jewelry_workshop_with_worn_w_1.jpeg" alt="Jewelry Workshop" />
     </section>
     
-    <section class="team">
+    <section style={them} class="team">
         <h2>Meet Our Team</h2>
         <div class="team-container">
             <div class="member">

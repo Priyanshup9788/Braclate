@@ -7,6 +7,7 @@ import Home from './assets/Components/Home'
 import Shop from './assets/Components/Shop'
 import About from './assets/Components/About'
 import User from './assets/Components/User'
+import Product from './assets/Components/Product'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
       {activeTab==="shop" && <Shop  theme={theme} styles={styles} />}
       {activeTab==="About" && <About  theme={theme} styles={styles} />}
       {activeTab==="user" && <User  theme={theme} styles={styles} />}
+      {activeTab==="Collections" && <Product theme={theme} styles={styles} />}
       <button style={{    fontSize:"20px",
     position: "fixed",
     bottom: "2%",
